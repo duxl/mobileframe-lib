@@ -19,6 +19,7 @@ dependencies {
 ```java
 HttpRequest httpRequest = new HttpRequest(context);
 httpRequest.setTimeout(15000); // 设置15秒超时时间
+// GET请求
 String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";
 httpRequest.get(url, new HttpRequest.OnCallbackListener() {
     /**
@@ -30,7 +31,12 @@ httpRequest.get(url, new HttpRequest.OnCallbackListener() {
     public void onCallback(String json, int status, String error) {
 	// TODO some codes edit
     }
-}); //java	
+});
+// POST请求1（通过addParam()方法设置post数据）
+httpRequest.addParam("name", "zhangSan");
+httpRequest.addParam("sex", "boy");
+httpRequest.post(url, listener);
+// POST请求2（直接post byte数组）
+httpRequest.post(url, byte[], listener); //java	
 ```
-abc
 
