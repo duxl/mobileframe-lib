@@ -13,7 +13,7 @@ dependencies {
 }  
 
 ## API功能介绍
-###com.duxl.mobileframe.http.HttpRequest网络接口
+### com.duxl.mobileframe.http.HttpRequest网络接口
 设置超时时间：httpRequest.setTimeout(int time)  
 get请求：httpRequest.get(String url, HttpRequest.OnCallbackListener listener)  
 post请求：httpRequest.post(String url, HttpRequest.OnCallbackListener listener),参数在post之前，调用addParam(String, String)添加post数据  
