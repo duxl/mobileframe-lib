@@ -18,23 +18,19 @@ dependencies {
 ### 网络接口 com.duxl.mobileframe.http.HttpRequest	
 ```java
 HttpRequest httpRequest = new HttpRequest(context);
-        httpRequest.setTimeout(15000); // 设置15秒超时时间
-        String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";
-        httpRequest.get(url, new HttpRequest.OnCallbackListener() {
-            /**
-             * @param json 返回的数据
-             * @param status 状态：200成功、-1超时、-2无网络、0其他失败
-             * @param error 错误描述
-             */
-            @Override
-            public void onCallback(String json, int status, String error) {
-                // TODO some codes edit
-            }
-        });
-//java	
+httpRequest.setTimeout(15000); // 设置15秒超时时间
+String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";
+httpRequest.get(url, new HttpRequest.OnCallbackListener() {
+    /**
+     * @param json 返回的数据
+     * @param status 状态：200成功、-1超时、-2无网络、0其他失败
+     * @param error 错误描述
+     */
+    @Override
+    public void onCallback(String json, int status, String error) {
+	// TODO some codes edit
+    }
+}); //java	
+```
+abc
 
-
-a<br/>
-b<br />
-[我的博客](http://www.baidu.com)
-![百度](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1497180411,125632679&fm=80&w=179&h=119&img.JPEG, "这是百度的图片")
