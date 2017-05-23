@@ -18,6 +18,8 @@ dependencies {
 * [网络接口](#网络接口)
 * [圆角图片](#圆角图片)
 
+***
+
 ### 网络接口 com.duxl.mobileframe.http.HttpRequest	
 ```java
 HttpRequest httpRequest = new HttpRequest(context);
@@ -41,6 +43,9 @@ httpRequest.post(url, listener);
 // 3、POST请求二（直接post byte数组）
 httpRequest.post(url, byte[], listener);
 ```
+
+***
+
 ### 圆角图片
 * 使用自定义View：RoundedImageView
 ```java
@@ -66,7 +71,7 @@ httpRequest.post(url, byte[], listener);
 	new AQuery(this).id(ivImg).image(url, options)
 ```
 	
-	
+***	
 	
 	
 	
