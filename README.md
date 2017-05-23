@@ -15,11 +15,11 @@ dependencies {
 }  
 
 ## API功能介绍
-### 网络接口 com.duxl.mobileframe.http.HttpRequest
-HttpRequest httpRequest = new HttpRequest(context);
-        httpRequest.setTimeout(15000); // 设置15秒超时时间
-        String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";
-        httpRequest.get(url, new HttpRequest.OnCallbackListener() {
+### 网络接口 com.duxl.mobileframe.http.HttpRequest		
+HttpRequest httpRequest = new HttpRequest(context);		
+httpRequest.setTimeout(15000); // 设置15秒超时时间		
+        String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";		
+        httpRequest.get(url, new HttpRequest.OnCallbackListener() {		
             /**
              * @param json 返回的数据
              * @param status 状态：200成功、-1超时、-2无网络、0其他失败
@@ -30,3 +30,8 @@ HttpRequest httpRequest = new HttpRequest(context);
                 // TODO some codes edit
             }
         });
+	
+
+
+a<br/>
+b
