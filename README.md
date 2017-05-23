@@ -16,7 +16,7 @@ dependencies {
 
 ## API功能介绍
 ### 网络接口 com.duxl.mobileframe.http.HttpRequest		
-`HttpRequest httpRequest = new HttpRequest(context);`		
+HttpRequest httpRequest = new HttpRequest(context);
 httpRequest.setTimeout(15000); // 设置15秒超时时间		
         String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";		
         httpRequest.get(url, new HttpRequest.OnCallbackListener() {		
@@ -34,4 +34,5 @@ httpRequest.setTimeout(15000); // 设置15秒超时时间
 
 
 a<br/>
-b
+b<br />
+[我的博客]（http://www.baidu.com）
