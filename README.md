@@ -19,6 +19,7 @@ dependencies {
 ## API功能介绍
 * [网络接口](#网络接口)
 * [圆角图片](#圆角图片)
+* [版本更新](#版本更新)
 
 ***
 
@@ -73,7 +74,25 @@ httpRequest.post(url, byte[], listener);
 	new AQuery(this).id(ivImg).image(url, options)
 ```
 	
-***	
+***
+
+### 版本更新
+* 通知栏更新 com.duxl.mobileframe.util.UpdateVersionNotification
+```java
+UpdateVersionNotification versionNotification = new UpdateVersionNotification(context, notifyIcon);
+versionNotification.doUpdate(apkUrl);
+```
+* 对话框更新 com.duxl.mobileframe.util.UpdateVersionDialog
+```java
+UpdateVersionDialog updateUtils = new UpdateVersionDialog(context);
+updateUtils.setOnCancelListener(new UpdateVersionDialog.OnCancelListener() {
+    @Override
+    public void onCancel() {
+	// 切换到后台下载
+    }
+});
+updateUtils.doUpdate(apkUrl, true);
+```
 	
 	
 	
