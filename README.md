@@ -13,8 +13,18 @@ dependencies {
 }  
 
 ## API功能介绍
-### com.duxl.mobileframe.http.HttpRequest网络接口
-设置超时时间：httpRequest.setTimeout(int time)  
-get请求：httpRequest.get(String url, HttpRequest.OnCallbackListener listener)  
-post请求：httpRequest.post(String url, HttpRequest.OnCallbackListener listener),参数在post之前，调用addParam(String, String)添加post数据  
-post请求：httpRequest.post(String url, byte[] data, HttpRequest.OnCallbackListener listener)
+### 网络接口 com.duxl.mobileframe.http.HttpRequest
+HttpRequest httpRequest = new HttpRequest(context);
+        httpRequest.setTimeout(15000); // 设置15秒超时时间
+        String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=13588888888";
+        httpRequest.get(url, new HttpRequest.OnCallbackListener() {
+            /**
+             * @param json 返回的数据
+             * @param status 状态：200成功、-1超时、-2无网络、0其他失败
+             * @param error 错误描述
+             */
+            @Override
+            public void onCallback(String json, int status, String error) {
+                // TODO some codes edit
+            }
+        });
