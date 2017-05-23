@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical" >
+
+    <com.duxl.mobileframe.view.roundedimageview.RoundedImageView
+        android:id="@+id/ivRoundView_activity_test_roundimageview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        app:riv_corner_radius="10dp"
+        app:riv_border_width="3dp"
+        app:riv_border_color="#0000FF"
+        app:riv_tile_mode_y="clamp"
+        app:riv_tile_mode_x="clamp"/>
+
+    <com.duxl.mobileframe.view.roundedimageview.RoundedImageView
+        android:id="@+id/ivRoundView2_activity_test_roundimageview"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        app:riv_corner_radius="100dp"
+        app:riv_border_width="3dp"
+        app:riv_border_color="#00FF00"
+        app:riv_tile_mode_y="clamp"
+        app:riv_tile_mode_x="clamp"/>
+</LinearLayout>

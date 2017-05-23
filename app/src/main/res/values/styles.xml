@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="mobileframe_dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <!-- <item name="android:windowFullscreen">true</item> -->
+        <!-- 全屏 -->
+        <item name="android:windowIsFloating">false</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
+
+    <style name="mobileframe_tab_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:background">#FFFFFFFF</item>
+        <item name="android:button">@null</item>
+    </style>
+
+</resources>
