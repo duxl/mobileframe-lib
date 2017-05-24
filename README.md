@@ -22,11 +22,13 @@ dependencies {
 * [版本更新](#版本更新)
 * [下拉刷新列表](#下拉刷新列表)
 * [侧滑删除](#侧滑删除)
+* [身份证验证](#身份证验证)
+* [时间日期工具](#时间日期工具)
 
 ***
 
 ### 网络接口
-#### 实现类 com.duxl.mobileframe.http.HttpRequest	
+#### 实现类 [HttpRequest](/app/src/main/java/com/duxl/mobileframe/http/HttpRequest.java)
 ```java
 HttpRequest httpRequest = new HttpRequest(context);
 httpRequest.setTimeout(15000); // 设置15秒超时时间
@@ -53,7 +55,7 @@ httpRequest.post(url, byte[], listener);
 ***
 
 ### 圆角图片
-* 使用自定义View：RoundedImageView
+* 使用自定义View：[RoundedImageView](/app/src/main/java/com/duxl/mobileframe/view/roundedimageview/RoundedImageView.java)
 ```xml
 	<com.duxl.mobileframe.view.roundedimageview.RoundedImageView
 		android:id="@+id/ivRoundView_activity_test_roundimageview"
@@ -80,12 +82,12 @@ httpRequest.post(url, byte[], listener);
 ***
 
 ### 版本更新
-* 通知栏更新 com.duxl.mobileframe.util.UpdateVersionNotification
+* 通知栏更新 [UpdateVersionNotification](/app/src/main/java/com/duxl/mobileframe/util/UpdateVersionNotification.java)
 ```java
 UpdateVersionNotification versionNotification = new UpdateVersionNotification(context, notifyIcon);
 versionNotification.doUpdate(apkUrl);
 ```
-* 对话框更新 com.duxl.mobileframe.util.UpdateVersionDialog
+* 对话框更新 [UpdateVersionDialog](/app/src/main/java/com/duxl/mobileframe/util/UpdateVersionDialog.java)
 ```java
 UpdateVersionDialog updateUtils = new UpdateVersionDialog(context);
 updateUtils.setOnCancelListener(new UpdateVersionDialog.OnCancelListener() {
@@ -100,7 +102,7 @@ updateUtils.doUpdate(apkUrl, true);
 ***
 
 ### 下拉刷新列表
-#### 实现类 com.duxl.mobileframe.view.XListView
+#### 实现类 [XListView](/app/src/main/java/com/duxl/mobileframe/view/XListView.java)
 * xml代码
 ```xml
 <com.duxl.mobileframe.view.XListView
@@ -161,7 +163,15 @@ public void loadData(final boolean isRefresh) {
 #### 示例比较复杂，不在这里展示，请查看 [TestSlideViewActivity](/app/src/main/java/com/duxl/mobileframe/demo/TestSlideViewActivity.java "点击查看源码")
 
 ***
+
+### 身份证验证
+#### [IDCardVeryer](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java)
+boolean checkIdCard(String) 传入身份证号码，返回是否是合法的身份证号码
 	
+***
+
+### 时间日期工具
+#### [DateUtil](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java)
 	
 	
 
