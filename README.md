@@ -24,6 +24,10 @@ dependencies {
 * [侧滑删除](#侧滑删除)
 * [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
 * [时间日期工具](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
+* [Base64](/app/src/main/java/com/duxl/mobileframe/util/Base64.java "点击查看源码")
+* [MD5Utils](/app/src/main/java/com/duxl/mobileframe/util/MD5Utils.java "点击查看源码")
+* [网络连接判断工具](/app/src/main/java/com/duxl/mobileframe/util/NetworkUtil.java "点击查看源码")
+* [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
 
 ***
 
