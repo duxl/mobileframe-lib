@@ -20,6 +20,7 @@ dependencies {
 * [网络接口](#网络接口)
 * [圆角图片](#圆角图片)
 * [版本更新](#版本更新)
+* [下拉刷新列表](#下拉刷新列表)
 
 ***
 
@@ -92,6 +93,59 @@ updateUtils.setOnCancelListener(new UpdateVersionDialog.OnCancelListener() {
     }
 });
 updateUtils.doUpdate(apkUrl, true);
+```
+
+***
+
+### 下拉刷新列表 com.duxl.mobileframe.view.XListView
+* xml代码
+```xml
+<com.duxl.mobileframe.view.XListView
+	android:id="@+id/listview_activity_test"
+	android:cacheColorHint="@android:color/transparent"
+	android:divider="@color/line_color"
+	android:dividerHeight="1dp"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" />
+```
+* java代码
+```java
+XListView listview = (XListView) findViewById(R.id.listview_activity_test);
+listview.setLoadMoreEnable(false);
+listview.setXListViewListener(new XListView.IXListViewListener() {
+    @Override
+    public void onRefresh(XListView v) {
+	// 下拉刷新回调
+	loadData(true);
+    }
+
+    @Override
+    public void onLoadMore(XListView v) {
+	// 点击更多回调
+	loadData(false);
+    }
+});
+// 滑动到最后自动加载更多（点击加载更多设置为MANUAL）
+listview.setLoadMoreType(XListView.LoadMore.AUTOMATIC);
+listview.setAdapter(mAdapter);
+
+
+/**
+* 加载数据
+* @param isRefresh 是否刷新
+*/
+public void loadData(final boolean isRefresh) {
+	// 调用接口代码省略，下面代码放在接口返回数据后的
+	listView.stopRefresh();
+	listView.stopLoadMore();
+
+	if(mListData.size() < totalCount) {
+	    listView.setLoadMoreEnable(true);
+
+	} else {
+	    listView.setLoadMoreEnable(false);
+	}
+}
 ```
 	
 	
