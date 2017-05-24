@@ -24,7 +24,8 @@ dependencies {
 
 ***
 
-### 网络接口 com.duxl.mobileframe.http.HttpRequest	
+### 网络接口
+#### 实现类 com.duxl.mobileframe.http.HttpRequest	
 ```java
 HttpRequest httpRequest = new HttpRequest(context);
 httpRequest.setTimeout(15000); // 设置15秒超时时间
@@ -97,7 +98,8 @@ updateUtils.doUpdate(apkUrl, true);
 
 ***
 
-### 下拉刷新列表 com.duxl.mobileframe.view.XListView
+### 下拉刷新列表
+#### 实现类 com.duxl.mobileframe.view.XListView
 * xml代码
 ```xml
 <com.duxl.mobileframe.view.XListView
