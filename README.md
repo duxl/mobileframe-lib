@@ -158,7 +158,7 @@ public void loadData(final boolean isRefresh) {
 ***
 
 ### 侧滑删除
-#### 示例比较复杂，不在这里展示，请查看 com.duxl.mobileframe.demo.TestSlideViewActivity
+#### 示例比较复杂，不在这里展示，请查看 [TestSlideViewActivity](/app/src/main/java/com/duxl/mobileframe/demo/TestSlideViewActivity.java "点击查看源码")
 
 ***
 	
