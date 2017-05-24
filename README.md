@@ -22,8 +22,8 @@ dependencies {
 * [版本更新](#版本更新)
 * [下拉刷新列表](#下拉刷新列表)
 * [侧滑删除](#侧滑删除)
-* [身份证验证](#身份证验证)
-* [时间日期工具](#时间日期工具)
+* [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
+* [时间日期工具](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 
 ***
 
@@ -164,14 +164,7 @@ public void loadData(final boolean isRefresh) {
 
 ***
 
-### 身份证验证
-#### [IDCardVeryer](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
-boolean checkIdCard(String) 传入身份证号码，返回是否是合法的身份证号码
-	
-***
 
-### 时间日期工具
-#### [DateUtil](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 	
 	
 
