@@ -12,7 +12,7 @@ allprojects {
 ###### 2、在app的build.gradle中添加如下依赖
 ```xml
 dependencies {  
-	compile 'com.github.duxl:mobileframe-lib:1.0'  
+	compile 'com.github.duxl:mobileframe-lib:1.1'  
 }
 ```
 
@@ -21,6 +21,7 @@ dependencies {
 * [圆角图片](#圆角图片)
 * [版本更新](#版本更新)
 * [下拉刷新列表](#下拉刷新列表)
+* [侧滑删除](#侧滑删除)
 
 ***
 
@@ -156,7 +157,10 @@ public void loadData(final boolean isRefresh) {
 
 ***
 
-over
+### 侧滑删除
+#### 示例比较复杂，不在这里展示，请查看 com.duxl.mobileframe.demo.TestSlideViewActivity
+
+***
 	
 	
 	
