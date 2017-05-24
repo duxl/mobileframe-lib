@@ -28,7 +28,7 @@ dependencies {
 ***
 
 ### 网络接口
-#### 实现类 [HttpRequest](/app/src/main/java/com/duxl/mobileframe/http/HttpRequest.java)
+#### 实现类 [HttpRequest](/app/src/main/java/com/duxl/mobileframe/http/HttpRequest.java "点击查看源码")
 ```java
 HttpRequest httpRequest = new HttpRequest(context);
 httpRequest.setTimeout(15000); // 设置15秒超时时间
@@ -55,7 +55,7 @@ httpRequest.post(url, byte[], listener);
 ***
 
 ### 圆角图片
-* 使用自定义View：[RoundedImageView](/app/src/main/java/com/duxl/mobileframe/view/roundedimageview/RoundedImageView.java)
+* 使用自定义View：[RoundedImageView](/app/src/main/java/com/duxl/mobileframe/view/roundedimageview/RoundedImageView.java "点击查看源码")
 ```xml
 	<com.duxl.mobileframe.view.roundedimageview.RoundedImageView
 		android:id="@+id/ivRoundView_activity_test_roundimageview"
@@ -82,12 +82,12 @@ httpRequest.post(url, byte[], listener);
 ***
 
 ### 版本更新
-* 通知栏更新 [UpdateVersionNotification](/app/src/main/java/com/duxl/mobileframe/util/UpdateVersionNotification.java)
+* 通知栏更新 [UpdateVersionNotification](/app/src/main/java/com/duxl/mobileframe/util/UpdateVersionNotification.java "点击查看源码")
 ```java
 UpdateVersionNotification versionNotification = new UpdateVersionNotification(context, notifyIcon);
 versionNotification.doUpdate(apkUrl);
 ```
-* 对话框更新 [UpdateVersionDialog](/app/src/main/java/com/duxl/mobileframe/util/UpdateVersionDialog.java)
+* 对话框更新 [UpdateVersionDialog](/app/src/main/java/com/duxl/mobileframe/util/UpdateVersionDialog.java "点击查看源码")
 ```java
 UpdateVersionDialog updateUtils = new UpdateVersionDialog(context);
 updateUtils.setOnCancelListener(new UpdateVersionDialog.OnCancelListener() {
@@ -102,7 +102,7 @@ updateUtils.doUpdate(apkUrl, true);
 ***
 
 ### 下拉刷新列表
-#### 实现类 [XListView](/app/src/main/java/com/duxl/mobileframe/view/XListView.java)
+#### 实现类 [XListView](/app/src/main/java/com/duxl/mobileframe/view/XListView.java "点击查看源码")
 * xml代码
 ```xml
 <com.duxl.mobileframe.view.XListView
@@ -165,13 +165,13 @@ public void loadData(final boolean isRefresh) {
 ***
 
 ### 身份证验证
-#### [IDCardVeryer](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java)
+#### [IDCardVeryer](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
 boolean checkIdCard(String) 传入身份证号码，返回是否是合法的身份证号码
 	
 ***
 
 ### 时间日期工具
-#### [DateUtil](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java)
+#### [DateUtil](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 	
 	
 
