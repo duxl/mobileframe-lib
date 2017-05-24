@@ -130,6 +130,10 @@ listview.setXListViewListener(new XListView.IXListViewListener() {
 // 滑动到最后自动加载更多（点击加载更多设置为MANUAL）
 listview.setLoadMoreType(XListView.LoadMore.AUTOMATIC);
 listview.setAdapter(mAdapter);
+// 显示刷新动画，此方法在第一次进入列表，用户没有下拉刷新而是程序自动加载第页数据的时候，可以调用此方法。
+listview.showRefresh();
+loadData(true);
+
 
 
 /**
@@ -149,6 +153,10 @@ public void loadData(final boolean isRefresh) {
 	}
 }
 ```
+
+***
+
+over
 	
 	
 	
