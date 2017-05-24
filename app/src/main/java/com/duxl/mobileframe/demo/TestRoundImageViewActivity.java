@@ -3,6 +3,7 @@ package com.duxl.mobileframe.demo;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.androidquery.AQuery;
 import com.duxl.mobileframe.BaseActivity;
 import com.duxl.mobileframe.R;
 
@@ -24,8 +25,8 @@ public class TestRoundImageViewActivity extends BaseActivity {
         mIvImg2 = (ImageView) findViewById(R.id.ivRoundView2_activity_test_roundimageview);
 
         String imgUrl = "http://img4.duitang.com/uploads/item/201409/19/20140919184028_U2ZYK.jpeg";
-        //new AQuery(this).id(mIvImg).image(imgUrl, true, true);
+        new AQuery(this).id(mIvImg).image(imgUrl, true, true);
 
-        //new AQuery(this).id(mIvImg2).image(imgUrl, true, true);
+        new AQuery(this).id(mIvImg2).image(imgUrl, true, true);
     }
 }

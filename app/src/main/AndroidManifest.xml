@@ -8,8 +8,19 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+
     <application>
         <activity android:name=".demo.MainActivity" />
+
+<!--
+    <application android:name=".MobileFrameApp">
+        <activity android:name=".demo.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+ -->
         <activity android:name=".BaseActivity" />
 
         <activity android:name=".demo.TestOkHttpActivity" android:label="http/HttpRequest-okHttp">
@@ -29,6 +40,13 @@
                 <action android:name="com.duxl.mobileframe.TestAction"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".demo.TestSlideViewActivity" android:label="控件/侧滑删除">
+            <intent-filter>
+                <action android:name="com.duxl.mobileframe.TestAction"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

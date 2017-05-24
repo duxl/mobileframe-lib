@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#999999"
+        android:textColor="#000000"
+        android:padding="4dp"
+        android:text="单个侧滑"/>
+
+    <FrameLayout
+        android:id="@+id/flContainer_activity_test_slide_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#999999"
+        android:textColor="#000000"
+        android:padding="4dp"
+        android:text="列表侧滑"/>
+
+    <com.duxl.mobileframe.view.ListViewCompat
+        android:id="@+id/listView_activity_test_slide_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
