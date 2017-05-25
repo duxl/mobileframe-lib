@@ -16,17 +16,7 @@ public class ViewClickDelayUtil {
 	 * @param v
 	 */
 	public static void clickDelay(Context context, final View v) {
-		if(v != null && v.isClickable()) {
-			v.setClickable(false);
-			v.postDelayed(new Runnable() {
-				@Override
-				public void run() {
-					if(v != null) {
-						v.setClickable(true);
-					}
-				}
-			}, 1000);
-		}
+		clickDelay(context, v, 1000);
 	}
 
 	/**
