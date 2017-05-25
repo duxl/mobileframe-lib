@@ -177,7 +177,7 @@ public void loadData(final boolean isRefresh) {
 ### 防连续点击工具
 #### [ViewClickDelayUtil](/app/src/main/java/com/duxl/mobileframe/util/ViewClickDelayUtil.java "点击查看源码")
 ```java
-**onClick事件代码如下编写**
+// onClick事件代码如下编写
 @Override
 public void onClick(View v) {
 	// 防止1秒内连续点击
