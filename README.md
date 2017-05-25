@@ -22,12 +22,18 @@ dependencies {
 * [版本更新](#版本更新)
 * [下拉刷新列表](#下拉刷新列表)
 * [侧滑删除](#侧滑删除)
+* [防连续点击工具](#防连续点击工具)
 * [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
 * [时间日期工具](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 * [Base64](/app/src/main/java/com/duxl/mobileframe/util/Base64.java "点击查看源码")
 * [MD5Utils](/app/src/main/java/com/duxl/mobileframe/util/MD5Utils.java "点击查看源码")
 * [网络连接判断工具](/app/src/main/java/com/duxl/mobileframe/util/NetworkUtil.java "点击查看源码")
 * [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
+* [双击退出程序](/app/src/main/java/com/duxl/mobileframe/util/DoubleClickExit.java "点击查看源码")
+* [序列化存储](/app/src/main/java/com/duxl/mobileframe/util/SerializableDataUtil.java "点击查看源码")
+* [SharedPreferencesUtil](/app/src/main/java/com/duxl/mobileframe/util/SharedPreferencesUtil.java "点击查看源码")
+* [软键盘显示&隐藏](/app/src/main/java/com/duxl/mobileframe/util/SoftKeyboardUtil.java "点击查看源码")
+* [字符串工具类](/app/src/main/java/com/duxl/mobileframe/util/StringUtils.java "点击查看源码")
 
 ***
 
@@ -168,7 +174,22 @@ public void loadData(final boolean isRefresh) {
 
 ***
 
+### 防连续点击工具
+#### [ViewClickDelayUtil](/app/src/main/java/com/duxl/mobileframe/util/ViewClickDelayUtil.java "点击查看源码")
+```java
+**onClick事件代码如下编写**
+@Override
+public void onClick(View v) {
+	// 防止1秒内连续点击
+	ViewClickDelayUtil.clickDelay(MainActivity.this, v, 1000);
 
+	if(v.getId() == R.id.xxx) {
+
+	} else if(v.getId() == R.id.yyy) {
+
+	}
+}
+```
 	
 	
 
