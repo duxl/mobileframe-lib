@@ -15,6 +15,10 @@ dependencies {
 	compile 'com.github.duxl:mobileframe-lib:1.1'  
 }
 ```
+引入库后，可以启动DemoActivity查看效果<br/>
+startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class));
+
+---
 
 ## API功能介绍
 * [网络接口](#网络接口)
