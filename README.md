@@ -21,13 +21,13 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 ---
 
 ## API功能介绍
-* [网络接口](#ViewPager广告Banner)
+* [网络接口](#网络接口)
 * [圆角图片](#圆角图片)
 * [版本更新](#版本更新)
 * [下拉刷新列表](#下拉刷新列表)
 * [侧滑删除](#侧滑删除)
 * [防连续点击工具](#防连续点击工具)
-* [ViewPager广告Banner](#ViewPager广告Banner)
+* [自动切换广告](#自动切换广告)
 * [时间日期工具](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 * [Base64](/app/src/main/java/com/duxl/mobileframe/util/Base64.java "点击查看源码")
 * [MD5Utils](/app/src/main/java/com/duxl/mobileframe/util/MD5Utils.java "点击查看源码")
@@ -198,7 +198,7 @@ public void onClick(View v) {
 
 ***
 
-### ViewPager广告Banner
+### 自动切换广告
 #### 具体使用示例，请查看 [TestAdvShowActivity](/app/src/main/java/com/duxl/mobileframe/demo/TestAdvShowActivity.java "点击查看源码")
 ```java
 // 实例化工具
