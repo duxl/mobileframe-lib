@@ -23,17 +23,18 @@ dependencies {
 * [下拉刷新列表](#下拉刷新列表)
 * [侧滑删除](#侧滑删除)
 * [防连续点击工具](#防连续点击工具)
-* [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
+* [ViewPager广告Bannder](#ViewPager广告Bannder)
 * [时间日期工具](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 * [Base64](/app/src/main/java/com/duxl/mobileframe/util/Base64.java "点击查看源码")
 * [MD5Utils](/app/src/main/java/com/duxl/mobileframe/util/MD5Utils.java "点击查看源码")
 * [网络连接判断工具](/app/src/main/java/com/duxl/mobileframe/util/NetworkUtil.java "点击查看源码")
-* [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
 * [双击退出程序](/app/src/main/java/com/duxl/mobileframe/util/DoubleClickExit.java "点击查看源码")
 * [序列化存储](/app/src/main/java/com/duxl/mobileframe/util/SerializableDataUtil.java "点击查看源码")
 * [SharedPreferencesUtil](/app/src/main/java/com/duxl/mobileframe/util/SharedPreferencesUtil.java "点击查看源码")
 * [软键盘显示&隐藏](/app/src/main/java/com/duxl/mobileframe/util/SoftKeyboardUtil.java "点击查看源码")
 * [字符串工具类](/app/src/main/java/com/duxl/mobileframe/util/StringUtils.java "点击查看源码")
+* [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
+* [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
 
 ***
 
@@ -189,6 +190,21 @@ public void onClick(View v) {
 
 	}
 }
+```
+
+***
+
+### ViewPager广告Bannder
+#### 具体使用示例，请查看 [TestAdvShowActivity](/app/src/main/java/com/duxl/mobileframe/demo/TestAdvShowActivity.java "点击查看源码")
+```java
+// 实例化工具
+AdvShowUtil advShowUtil= new AdvShowUtil(context, viewPager, radioGroup);
+// 设置指示器样式
+advShowUtil.setPointResid(R.drawable.adv_point_selector); 
+// 显示广告并自动切换
+advShowUtil.showAdvData(advItems);
+// 停止广告滚动，当页面销毁时需要调用此API，避免多次使用造成OOM问题
+advShowUtil.recycle();
 ```
 	
 	
