@@ -21,7 +21,7 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 ---
 
 ## API功能介绍
-* [网络接口](#网络接口)
+* [网络接口](#ViewPager广告Banner)
 * [圆角图片](#圆角图片)
 * [版本更新](#版本更新)
 * [下拉刷新列表](#下拉刷新列表)
