@@ -215,6 +215,37 @@ advShowUtil.recycle();
 
 ### 动图
 #### gif动图android本身不支持，本lib库也不包含，需要使用，请转移到[Fresco](https://www.fresco-cn.org "点击查看")，接入[文档](https://www.fresco-cn.org/docs)
-	
+* 使用示例（SimpleDraweeView必须指定具体高宽，否则不能显示）
+```xml
+// xml布局
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/gifView_activity_test_gifview"
+        fresco:placeholderImage="@mipmap/ic_launcher"
+        fresco:viewAspectRatio="1"
+        android:scaleType="fitXY"
+        android:background="#0000FF"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+</LinearLayout>
+```
+```java
+// java代码
+SimpleDraweeView mGifView = (SimpleDraweeView) findViewById(R.id.gifView_activity_test_gifview);
+
+Uri uri = Uri.parse("http://img.huofar.com/data/jiankangrenwu/shizi.gif");
+DraweeController draweeController =
+	Fresco.newDraweeControllerBuilder()
+		.setUri(uri)
+		.setAutoPlayAnimations(true) // 设置加载图片完成后是否直接进行播放
+		.build();
+mGifView.setController(draweeController);
+```
 	
 
