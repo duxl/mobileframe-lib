@@ -39,7 +39,7 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 * [字符串工具类](/app/src/main/java/com/duxl/mobileframe/util/StringUtils.java "点击查看源码")
 * [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
 * [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
-
+* [Gif动图](#Gif动图)
 ***
 
 ### 网络接口
@@ -210,6 +210,11 @@ advShowUtil.showAdvData(advItems);
 // 停止广告滚动，当页面销毁时需要调用此API，避免多次使用造成OOM问题
 advShowUtil.recycle();
 ```
+
+***
+
+### Gif动图
+gif动图android本身不支持，本lib库也不包含，需要使用，请转移到[Fresco](https://www.fresco-cn.org "点击查看")，接入[文档](https://www.fresco-cn.org/docs)
 	
 	
 
