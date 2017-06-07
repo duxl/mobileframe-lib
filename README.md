@@ -214,7 +214,7 @@ advShowUtil.recycle();
 ***
 
 ### Gif动图
-gif动图android本身不支持，本lib库也不包含，需要使用，请转移到[Fresco](https://www.fresco-cn.org "点击查看")，接入[文档](https://www.fresco-cn.org/docs)
+#### gif动图android本身不支持，本lib库也不包含，需要使用，请转移到[Fresco](https://www.fresco-cn.org "点击查看")，接入[文档](https://www.fresco-cn.org/docs)
 	
 	
 
