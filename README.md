@@ -21,13 +21,13 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 ---
 
 ## API功能介绍
-* [网络接口](#网络接口)
-* [圆角图片](#圆角图片)
-* [版本更新](#版本更新)
-* [下拉刷新列表](#下拉刷新列表)
-* [侧滑删除](#侧滑删除)
-* [防连续点击工具](#防连续点击工具)
-* [自动切换广告](#自动切换广告)
+* [网络接口](#网络接口 "点击查看说明")
+* [圆角图片](#圆角图片 "点击查看说明")
+* [版本更新](#版本更新 "点击查看说明")
+* [下拉刷新列表](#下拉刷新列表 "点击查看说明")
+* [侧滑删除](#侧滑删除 "点击查看说明")
+* [防连续点击工具](#防连续点击工具 "点击查看说明")
+* [自动切换广告](#自动切换广告 "点击查看说明")
 * [时间日期工具](/app/src/main/java/com/duxl/mobileframe/util/DateUtil.java "点击查看源码")
 * [Base64](/app/src/main/java/com/duxl/mobileframe/util/Base64.java "点击查看源码")
 * [MD5Utils](/app/src/main/java/com/duxl/mobileframe/util/MD5Utils.java "点击查看源码")
@@ -39,7 +39,7 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 * [字符串工具类](/app/src/main/java/com/duxl/mobileframe/util/StringUtils.java "点击查看源码")
 * [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
 * [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
-* [Gif动图](#Gif动图)
+* [动图](#动图 "点击查看说明")
 ***
 
 ### 网络接口
@@ -213,7 +213,7 @@ advShowUtil.recycle();
 
 ***
 
-### Gif动图
+### 动图
 #### gif动图android本身不支持，本lib库也不包含，需要使用，请转移到[Fresco](https://www.fresco-cn.org "点击查看")，接入[文档](https://www.fresco-cn.org/docs)
 	
 	
