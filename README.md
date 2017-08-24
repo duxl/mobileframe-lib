@@ -114,7 +114,7 @@ updateUtils.setOnCancelListener(new UpdateVersionDialog.OnCancelListener() {
 });
 updateUtils.doUpdate(apkUrl, true);
 ```
-`高版本系统更新说明` [动态存储权限分配](https://github.com/duxl/mobileframe-lib/blob/master/高于6.0系统动态分配权限问题说明)
+`高版本系统更新说明` [动态存储权限分配](https://github.com/duxl/mobileframe-lib/blob/master/高于6.0系统动态分配权限问题说明 "点击查看代码实现")
 ***
 
 ### 下拉刷新列表
