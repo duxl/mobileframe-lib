@@ -1,1 +1,64 @@
+如果手机系统高于或等于6.0，那么更新app时需要动态分配存储权限（需要用户允许权限）后才能正常更新。
 
+在代码中需要做的有以下几步：
+
+1、在AndroidManifest.xml文件的application节点添加如下代码
+<provider
+    android:name="android.support.v4.content.FileProvider"
+    android:authorities="your.package.name.fileprovider"
+    android:grantUriPermissions="true"
+    android:exported="false">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+</provider>
+
+2、在项目的res目中创建xml目录，在目录中创建 file_paths.xml 文件，内容如下
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="apk" path="apk" />
+    <cache-path name="apk" path="apk" />
+    <!--
+    <external-path name="apk" path="apk" />
+    <external-files-path name="apk" path="apk" />
+    <external-cache-path name="apk" path="apk" />
+    -->
+</paths>
+
+3、在需要使用存储功能的地方，判断是否拥有存储权限
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//if (Build.VERSION.SDK_INT >= 23) {
+    if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, mRequestCodeForPermissionWriteData);
+        // Fragment中申请权限使用下面方式
+        // requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, mRequestCodeForPermissionWriteData);
+        return;
+    }
+}
+
+4、在Activity或Fragment的回调中判断是否已经获取权限
+@Override
+public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    if(requestCode == mRequestCodeForPermissionWriteData) {
+        if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // TODO 下载文件
+        } else {
+            Toast.makeText(getActivity(), "您拒绝了存储权限，更新不能正常进行", Toast.LENGTH_LONG).show();
+        }
+    }
+}
+
+5、下载完毕后，跳转到安装界面代码如下
+String apkUpdatePath = "apk在本地的path地址"
+
+Intent intent = new Intent(Intent.ACTION_VIEW);
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+    intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+    Uri contentUri = FileProvider.getUriForFile(mContext, "your.package.name.fileprovider", new File(apkUpdatePath));
+    intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
+} else {
+    intent.setDataAndType(Uri.fromFile(new File(apkUpdatePath)), "application/vnd.android.package-archive");
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+}
+mContext.startActivity(intent);
