@@ -7,7 +7,7 @@ import android.widget.RadioGroup;
 import com.duxl.mobileframe.BaseActivity;
 import com.duxl.mobileframe.R;
 import com.duxl.mobileframe.adapter.AdvAdapter;
-import com.duxl.mobileframe.mobile.AdvInfo;
+import com.duxl.mobileframe.model.AdvInfo;
 import com.duxl.mobileframe.util.AdvShowUtil;
 import com.duxl.mobileframe.view.Toast;
 

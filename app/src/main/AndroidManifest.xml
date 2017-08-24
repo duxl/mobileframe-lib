@@ -55,7 +55,11 @@
                     </intent-filter>
                 </activity>
 
-
+                <activity android:name=".demo.TestLetterListViewActivity" android:label="控件/LetterListView">
+                    <intent-filter>
+                        <action android:name="com.duxl.mobileframe.TestAction"/>
+                    </intent-filter>
+                </activity>
 
             </application>
 

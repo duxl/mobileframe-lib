@@ -13,7 +13,7 @@ import android.widget.RadioGroup;
 
 import com.duxl.mobileframe.R;
 import com.duxl.mobileframe.adapter.AdvAdapter;
-import com.duxl.mobileframe.mobile.AdvInfo;
+import com.duxl.mobileframe.model.AdvInfo;
 
 import java.util.List;
 
