@@ -40,6 +40,7 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 * [身份证验证](/app/src/main/java/com/duxl/mobileframe/util/IDCardVeryer.java "点击查看源码")
 * [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
 * [动图](#动图 "点击查看说明")
+* [首字母快速定位](/app/src/main/java/com/duxl/mobileframe/demo/TestLetterListViewActivity.java "点击查看使用示例")
 ***
 
 ### 网络接口
