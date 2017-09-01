@@ -29,9 +29,14 @@
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //if (Build.VERSION.SDK_INT >= 23) {
     if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-        ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, mRequestCodeForPermissionWriteData);
-        // Fragment中申请权限使用下面方式
-        // requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, mRequestCodeForPermissionWriteData);
+        if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            // 拒绝过了,但没有勾选不再提示会进入if
+            Toast.makeText(mContext, "请在 设置→应用管理 中开启此应用的储存授权", Toast.LENGTH_LONG).show();
+        } else {
+            ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, mRequestCodeForPermissionWriteData);
+            // Fragment中申请权限使用下面方式
+            // requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, mRequestCodeForPermissionWriteData);
+        }
         return;
     }
 }
@@ -44,7 +49,7 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
         if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             // TODO 下载文件
         } else {
-            Toast.makeText(getActivity(), "您拒绝了存储权限，更新不能正常进行", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "请在 设置→应用管理 中开启此应用的储存授权", Toast.LENGTH_LONG).show();
         }
     }
 }
