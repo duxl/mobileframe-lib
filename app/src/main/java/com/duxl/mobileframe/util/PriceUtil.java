@@ -16,7 +16,7 @@ public class PriceUtil {
 	 * @param num 数量
 	 */
 	public static double multiplyPrice(double price, int num) {
-		return new BigDecimal(price).multiply(new BigDecimal(num)).doubleValue();
+		return new BigDecimal(String.valueOf(price)).multiply(new BigDecimal(String.valueOf(num))).doubleValue();
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class PriceUtil {
 		if(num == 0) {
 			return 0;
 		}
-		return new BigDecimal(price).divide(new BigDecimal(num), 10, BigDecimal.ROUND_DOWN).doubleValue();
+		return new BigDecimal(String.valueOf(price)).divide(new BigDecimal(String.valueOf(num)), 10, BigDecimal.ROUND_DOWN).doubleValue();
 	}
 	
 	/**
@@ -39,7 +39,7 @@ public class PriceUtil {
 	 * @return
 	 */
 	public static double addPrice(double price1, double price2) {
-		return new BigDecimal(price1).add(new BigDecimal(price2)).doubleValue();
+		return new BigDecimal(String.valueOf(price1)).add(new BigDecimal(String.valueOf(price2))).doubleValue();
 	}
 	
 	/**
@@ -49,7 +49,7 @@ public class PriceUtil {
 	 * @return
 	 */
 	public static double subtractPrice(double price1, double price2) {
-		return new BigDecimal(price1).subtract(new BigDecimal(price2)).doubleValue();
+		return new BigDecimal(String.valueOf(price1)).subtract(new BigDecimal(String.valueOf(price2))).doubleValue();
 	}
 	
 	/**
