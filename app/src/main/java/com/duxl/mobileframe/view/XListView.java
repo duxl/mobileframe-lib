@@ -388,7 +388,8 @@ public class XListView extends ListView implements OnScrollListener {
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 		mTotalItemCount = totalItemCount;
-		if (firstVisibleItem + visibleItemCount == totalItemCount) {
+		// mTotalItemCount 包括headerView和footerView添加的那个item，所以列表如果有数据，总的item数肯定是大于2的
+		if (mTotalItemCount > 2 && firstVisibleItem + visibleItemCount == totalItemCount) {
 			if (mLoadMoreType == LoadMore.AUTOMATIC && mLoadMoreEnable) {
 				// 自动加载
 				if (mFooterView != null) {
