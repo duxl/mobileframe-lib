@@ -94,6 +94,7 @@ httpRequest.post(url, byte[], listener);
 	options.round = 30; // 圆角半径
 	new AQuery(this).id(ivImg).image(url, options)
 ```
+* [Fresco](https://www.fresco-cn.org "点击查看")也支持圆角图片，接入[文档](https://www.fresco-cn.org/docs)
 	
 ***
 
