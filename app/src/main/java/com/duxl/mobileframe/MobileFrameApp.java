@@ -2,8 +2,12 @@ package com.duxl.mobileframe;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.view.KeyEvent;
+import android.widget.EditText;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -80,4 +84,44 @@ public class MobileFrameApp extends Application {
 		}
 		return null;
 	}
+
+	/**
+	 * 获取"渠道号"等在manifest内定义的meta值
+	 * @param key
+	 * @return
+	 */
+	public String getMetaData(String key) {
+		try {
+			ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+			Object value = ai.metaData.get(key);
+			if (value != null) {
+				return value.toString();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	/**
+	 * 跳转到手机桌面（相当于点击Home键）
+	 */
+	public void toDesktop() {
+		Intent setIntent = new Intent(Intent.ACTION_MAIN);
+		setIntent.addCategory(Intent.CATEGORY_HOME);
+		setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(setIntent);
+	}
+
+	/**
+	 * 调用系统键盘的del删除键，删除编辑框为editText的单个字符
+	 * @param editText
+	 */
+	public void callDelkey(EditText editText) {
+		int keyCode = KeyEvent.KEYCODE_DEL;
+		KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
+		editText.onKeyDown(keyCode, event);
+	}
+
+
 }
