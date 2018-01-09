@@ -41,6 +41,7 @@ startActivity(new Intent(context, com.duxl.mobileframe.demo.MainActivity.class))
 * [价格运算&格式化](/app/src/main/java/com/duxl/mobileframe/util/PriceUtil.java "点击查看源码")
 * [动图](#动图 "点击查看说明")
 * [首字母快速定位](/app/src/main/java/com/duxl/mobileframe/demo/TestLetterListViewActivity.java "点击查看使用示例")
+* [安全WebView](#JsSecurityWebView "点击查看说明")
 ***
 
 ### 网络接口
@@ -249,5 +250,8 @@ DraweeController draweeController =
 		.build();
 mGifView.setController(draweeController);
 ```
+
+### JsSecurityWebView
+WebView注入Java对象给Js调用，在API 17以下有安全漏洞问题。这里提供一个安全的WebView，具体使用请参考 [TestHtmlJsActivity](/app/src/main/java/com/duxl/mobileframe/demo/TestHtmlJsActivity.java "点击查看源码")
 	
 
