@@ -8,7 +8,6 @@ import android.webkit.JavascriptInterface;
 import android.webkit.JsPromptResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 安全的WebView使用示例
  * Created by duxl on 2016/4/1.
  */
 public class TestHtmlJsActivity extends Activity {
@@ -32,6 +32,7 @@ public class TestHtmlJsActivity extends Activity {
         setContentView(webView);
 
         webView.getSettings().setJavaScriptEnabled(true);
+        // 这里使用的是set方法替换add方法
         webView.setJavascriptInterface(new JavaScriptObject(this), "appClient");
 
         webView.loadUrl("file:///android_asset/testjs.html");

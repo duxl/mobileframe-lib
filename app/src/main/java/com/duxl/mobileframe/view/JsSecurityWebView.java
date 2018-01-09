@@ -25,7 +25,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Method;
 
 /**
- * Js安全的WebView，添加
+ * Js安全的WebView
  * Created by duxl on 2016/4/5.
  */
 public class JsSecurityWebView extends WebView {
