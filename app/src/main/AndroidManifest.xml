@@ -10,57 +10,65 @@
 
 
 
-    <application>
-        <activity android:name=".demo.MainActivity" />
+        <application>
+            <activity android:name=".demo.MainActivity" />
 
-        <!--
-            <application android:name=".MobileFrameApp">
-                <activity android:name=".demo.MainActivity">
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-                        <category android:name="android.intent.category.LAUNCHER" />
-                    </intent-filter>
-                </activity>
-         -->
+            <!--
+                            <application android:name=".MobileFrameApp">
+                                <activity android:name=".demo.MainActivity">
+                                    <intent-filter>
+                                        <action android:name="android.intent.action.MAIN" />
+                                        <category android:name="android.intent.category.LAUNCHER" />
+                                    </intent-filter>
+                                </activity>
 
-                <activity android:name=".BaseActivity" />
+             -->
+                            <activity android:name=".BaseActivity" />
 
-                <activity android:name=".demo.TestOkHttpActivity" android:label="http/HttpRequest-okHttp">
-                    <intent-filter>
-                        <action android:name="com.duxl.mobileframe.TestAction"/>
-                    </intent-filter>
-                </activity>
+                            <activity android:name=".demo.TestOkHttpActivity" android:label="http/HttpRequest-okHttp">
+                                <intent-filter>
+                                    <action android:name="com.duxl.mobileframe.TestAction"/>
+                                </intent-filter>
+                            </activity>
 
-                <activity android:name=".demo.TestRoundImageViewActivity" android:label="控件/圆角图片">
-                    <intent-filter>
-                        <action android:name="com.duxl.mobileframe.TestAction"/>
-                    </intent-filter>
-                </activity>
+                            <activity android:name=".demo.TestRoundImageViewActivity" android:label="控件/圆角图片">
+                                <intent-filter>
+                                    <action android:name="com.duxl.mobileframe.TestAction"/>
+                                </intent-filter>
+                            </activity>
 
-                <activity android:name=".demo.TestVersionUpdateActivity" android:label="控件/版本更新">
-                    <intent-filter>
-                        <action android:name="com.duxl.mobileframe.TestAction"/>
-                    </intent-filter>
-                </activity>
+                            <activity android:name=".demo.TestVersionUpdateActivity" android:label="控件/版本更新">
+                                <intent-filter>
+                                    <action android:name="com.duxl.mobileframe.TestAction"/>
+                                </intent-filter>
+                            </activity>
 
-                <activity android:name=".demo.TestSlideViewActivity" android:label="控件/侧滑删除">
-                    <intent-filter>
-                        <action android:name="com.duxl.mobileframe.TestAction"/>
-                    </intent-filter>
-                </activity>
+                            <activity android:name=".demo.TestSlideViewActivity" android:label="控件/侧滑删除">
+                                <intent-filter>
+                                    <action android:name="com.duxl.mobileframe.TestAction"/>
+                                </intent-filter>
+                            </activity>
 
-                <activity android:name=".demo.TestAdvShowActivity" android:label="控件/Banner显示工具">
-                    <intent-filter>
-                        <action android:name="com.duxl.mobileframe.TestAction"/>
-                    </intent-filter>
-                </activity>
+                            <activity android:name=".demo.TestAdvShowActivity" android:label="控件/Banner显示工具">
+                                <intent-filter>
+                                    <action android:name="com.duxl.mobileframe.TestAction"/>
+                                </intent-filter>
+                            </activity>
 
-                <activity android:name=".demo.TestLetterListViewActivity" android:label="控件/LetterListView">
-                    <intent-filter>
-                        <action android:name="com.duxl.mobileframe.TestAction"/>
-                    </intent-filter>
-                </activity>
+                            <activity android:name=".demo.TestLetterListViewActivity" android:label="控件/LetterListView">
+                                <intent-filter>
+                                    <action android:name="com.duxl.mobileframe.TestAction"/>
+                                </intent-filter>
+                            </activity>
 
-            </application>
+                                <activity android:name=".demo.TestHtmlJsActivity" android:label="控件/JS安全的WebView">
+                                    <intent-filter>
+                                        <action android:name="com.duxl.mobileframe.TestAction"/>
+                                    </intent-filter>
+                                </activity>
 
-        </manifest>
+
+
+                        </application>
+
+                    </manifest>

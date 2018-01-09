@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+		<script type="text/javascript">
+		
+			function test() {
+				appClient.test();
+			}
+		
+			function sayHello() {
+				appClient.sayHello('张三');
+			}
+			
+			function add() {
+				var sum = appClient.add(2, 5);
+				alert("2 + 5 = " + sum);
+			}
+			
+			function showInfo() {
+				appClient.showInfo("zls", 23);
+			}
+			
+			function getList() {
+				var list = appClient.getList();
+				alert(list);
+			}
+			
+			function getUser() {
+				var user = appClient.getUser();
+				alert(user);
+			}
+			
+			function showUser() {
+				// 这里不能传递json对象，只能传递json字符串
+				var user = "{'name': '晓晓', 'age': 18, 'isBoy':false, 'height':1.8}";
+				appClient.showUser(user);
+			}
+			
+			function none() {
+				prompt("直接调用prompt，运行prompt原有的流程", "");
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h5>测试Javascript与Java通讯<br />使用WebView.<font color='red'>set</font>JavascriptInterface(Object object, String name)替换Android自带的WebView.addJavascriptInterface(Object object, String name),避免Android 4.2以下的系统漏洞<h5>
+		<input type="button" value="test【无参无返回值】" onclick="test()" /><br /><br />
+		<input type="button" value="sayHello【有参无返回值】" onclick="sayHello()" /><br /><br />
+		<input type="button" value="add【有参有返回值】" onclick="add()" /><br /><br />
+		<input type="button" value="showInfo【有参有返回值】" onclick="showInfo()" /><br /><br />
+		<input type="button" value="getList【返回集合】" onclick="getList()" /><br /><br />
+		<input type="button" value="getUser【返回自定义类型】" onclick="getUser()" /><br /><br />
+		<input type="button" value="showUser【传入自定义类型】" onclick="showUser()" /><br /><br />
+		<input type="button" value="none【没有映射的方法】" onclick="none()" /><br /><br />
+		<p>
+			我们肯定不能再调用addJavascriptInterface方法了。关于这个问题，最核心的就是要知道JS事件这一个动作，JS与Java进行交互我们知道，有以下几种，比prompt, alert等，这样的动作都会对应到WebChromeClient类中相应的方法，对于prompt，它对应的方法是onJsPrompt方法，这个方法的声明如下：
+			public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result)
+
+			通过这个方法，JS能把信息（文本）传递到Java，而Java也能把信息（文本）传递到JS中，通知这个思路我们能不能找到解决方案呢？
+			【1】让JS调用一个Javascript方法，这个方法中是调用prompt方法，通过prompt把JS中的信息传递过来，这些信息应该是我们组合成的一段有意义的文本，可能包含：特定标识，方法名称，参数等。在onJsPrompt方法中，我们去解析传递过来的文本，得到方法名，参数等，再通过反射机制，调用指定的方法，从而调用到Java对象的方法。
+			【2】关于返回值，可以通过prompt返回回去，这样就可以把Java中方法的处理结果返回到Js中。
+			【3】我们需要动态生成一段声明Javascript方法的JS脚本，通过loadUrl来加载它，从而注册到html页面中
+		</p>
+	</body>
+</html>
