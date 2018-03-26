@@ -2,4 +2,5 @@
 <resources>
     <color name="listitem_bg">#FFFFFF</color>
     <color name="listitem_press_bg">#F8F8F8</color>
+    <color name="xlistview_header">#555555</color>
 </resources>
