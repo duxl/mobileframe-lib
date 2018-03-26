@@ -104,10 +104,7 @@ public class HttpRequest {
 			String paramUrl = buildGetUrl(url);
 			Log.i(TAG, "请求接口GET:: url=" + paramUrl);
 
-			Request request = new Request.Builder().url(paramUrl).build();
-			if (Build.VERSION.SDK != null && Build.VERSION.SDK_INT > 13) {
-			    request.addHeader("Connection", "close");
-			}
+			Request request = new Request.Builder().addHeader("Connection", "close").url(paramUrl).build();
 			OkHttpClient okHttpClient = new OkHttpClient();
 			okHttpClient.setConnectTimeout(mTimeout, TimeUnit.SECONDS);
 			okHttpClient.setReadTimeout(mTimeout, TimeUnit.SECONDS);
@@ -181,10 +178,7 @@ public class HttpRequest {
 				builder.add(entry.getKey(), entry.getValue());
 			}
 		}
-		Request request = new Request.Builder().url(url).post(builder.build()).build();
-		if (Build.VERSION.SDK != null && Build.VERSION.SDK_INT > 13) {
-		    request.addHeader("Connection", "close");
-		}
+		Request request = new Request.Builder().addHeader("Connection", "close").url(url).post(builder.build()).build();
 		post(url, request, listener);
 	}
 
@@ -193,10 +187,7 @@ public class HttpRequest {
 			Log.i(TAG, "请求接口POST:: url=" + url + ", postData=" + new String(data));
 		}
 		RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), data);
-		Request request = new Request.Builder().url(url).post(requestBody).build();
-		if (Build.VERSION.SDK != null && Build.VERSION.SDK_INT > 13) {
-		    request.addHeader("Connection", "close");
-		}
+		Request request = new Request.Builder().addHeader("Connection", "close").url(url).post(requestBody).build();
 		post(url, request, listener);
 	}
 	
