@@ -16,9 +16,11 @@
 2、在项目的res目中创建xml目录，在目录中创建 file_paths.xml 文件，内容如下
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
+    <root-path path="" name="*" />
+    <!--
     <files-path name="apk" path="apk" />
     <cache-path name="apk" path="apk" />
-    <!--
+    <root-path path="" name="*" />
     <external-path name="apk" path="apk" />
     <external-files-path name="apk" path="apk" />
     <external-cache-path name="apk" path="apk" />
