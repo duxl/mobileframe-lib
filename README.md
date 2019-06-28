@@ -12,7 +12,7 @@ allprojects {
 ###### 2、在app的build.gradle中添加如下依赖
 ```xml
 dependencies {  
-	compile 'com.github.duxl:mobileframe-lib:1.3.0'  
+	compile 'com.github.duxl:mobileframe-lib:1.3.2'  
 }
 ```
 引入库后，可以启动DemoActivity查看效果<br/>
