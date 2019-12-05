@@ -70,4 +70,46 @@ public class PriceUtil {
 	public static String format(double price, String format) {
 		return new DecimalFormat(format).format(price);
 	}
+
+	/**
+     *
+     * <pre>
+     *     万以下原样显示，万以上用万做单位，保留两位小数四舍五入
+     *     12       →   12
+     *     1234     →   1,234
+     *     12.345   →   12.35
+     *     1230000  →   123万
+     *     1234567  →   123.46万
+     *     12345678 →   1,234.57万
+     * </pre>
+     * @param value 格式化的数字
+     * @return
+     */
+    public static String formatW(Double value) {
+        StringBuffer sb = new StringBuffer();
+
+        BigDecimal wan = new BigDecimal("10000"); // 万
+        BigDecimal num = new BigDecimal(value);
+
+        DecimalFormat df = new DecimalFormat(); // 小数位末尾是0的舍去
+        // DecimalFormat df = new DecimalFormat("0.00"); // 始终保留2位小数
+        df.setMaximumFractionDigits(2); // 最多保留2位小数
+        df.setGroupingSize(3); // 整数位3位分为一组
+        df.setRoundingMode(RoundingMode.HALF_UP);
+
+        if (num.compareTo(wan) == -1 || num.compareTo(wan) == 0) { // 万及以下
+            sb.append(df.format(num));
+
+        } else { // 万以上
+            sb.append(df.format(num.divide(wan)));
+            sb.append("万");
+
+        }
+
+        if (sb.length() == 0) {
+            return "0";
+        }
+
+        return sb.toString();
+    }
 }
