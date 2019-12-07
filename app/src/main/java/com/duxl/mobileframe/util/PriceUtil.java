@@ -93,6 +93,8 @@ public class PriceUtil {
 
         DecimalFormat df = new DecimalFormat(); // 小数位末尾是0的舍去
         // DecimalFormat df = new DecimalFormat("0.00"); // 始终保留2位小数
+        // df.setMinimumFractionDigits(2); // 至少保留2位小数
+	// df.setNegativePrefix("复"); // 设置负数前缀
         df.setMaximumFractionDigits(2); // 最多保留2位小数
         df.setGroupingSize(3); // 整数位3位分为一组
         df.setRoundingMode(RoundingMode.HALF_UP);
