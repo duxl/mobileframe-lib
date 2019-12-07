@@ -86,6 +86,9 @@ public class PriceUtil {
      * @return
      */
     public static String formatW(Double value) {
+	if(value == null) {
+	    return "0";	
+	}
         StringBuffer sb = new StringBuffer();
 
         BigDecimal wan = new BigDecimal("10000"); // 万
